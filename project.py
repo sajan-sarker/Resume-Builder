@@ -1,5 +1,5 @@
 # Description: This file contains the code for the project.
-from fpdf2 import FPDF
+from fpdf import FPDF
 
 def create_resume(basic_details, skills, experience, education, projects):
     pdf = FPDF()
