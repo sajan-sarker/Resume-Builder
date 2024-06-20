@@ -1,11 +1,27 @@
 # Description: This file contains the code for the project.
 from fpdf import FPDF
 
-def create_resume(basic_details, skills, experience, education, projects):
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font("Arial", size=12)
+#def create_resume(basic_details, skills, experience, education, projects):
 
+pdf = FPDF()
+pdf = FPDF(orientation="portrait", format="a4")
+pdf.add_page()
+def header(name):
+    pdf.set_font("Arial", "B", 16)
+    pdf.cell(0, 10, name, 0, 1, "C")
+def sub_header(title):
+    pdf.set_font("Arial", "", 10)
+    pdf.cell(0, 10, title, 0, 0, "C")
+
+def create_resume(basic_details):
+    header(basic_details["name"])
+    sub_header(basic_details["position"])
+    pdf.output("Resume.pdf")
+
+
+    #pdf.set_font("Arial","B", size=13)
+    #pdf.cell(200, 10, basic_details[0], ln=True, align="C")
+    """
     pdf.set_font("Arial", style="B", size=16)
     pdf.cell(200, 10, "Resume", ln=True, align="C")
 
@@ -16,35 +32,8 @@ def create_resume(basic_details, skills, experience, education, projects):
     create_box("Email: " + basic_details["email"])
     create_box("Address: " + basic_details["address"])
     create_box("Motivation: " + basic_details["motivation"])
+    """
 
-    create_section("Skills", "")
-    create_line()
-    for skill in skills:
-        create_box(skill)
-
-    create_section("Experience", "")
-    create_line()
-    for exp in experience:
-        create_box("Company: " + exp["company"])
-        create_box("Position: " + exp["position"])
-        create_box("Description: " + exp["description"])
-
-    create_section("Education", "")
-    create_line()
-    for edu in education:
-        create_box("School/ University: " + edu["school"])
-        create_box("Degree: " + edu["degree"])
-        create_box("Major: " + edu["major"])
-        create_box("CGPA: " + edu["cgpa"])
-
-    create_section("Projects", "")
-    create_line()
-    for project in projects:
-        create_box("Project: " + project["project"])
-        create_box("Link: " + project["link"])
-        create_box("Description: " + project["project_description"])
-
-    pdf.output("resume.pdf")
 
 def create_box(text):
     ...
@@ -56,6 +45,7 @@ def create_line():
     ...
 
 def main():
+    """
     name = input("Name: ")
     phone_number = input("Number: ")
     email = input("Email: ")
@@ -101,8 +91,17 @@ def main():
         link = input("Link: ")
         project_description = input("Description: ")
         projects.append({"project": project, "link": link, "project_description": project_description})
-
-    create_resume(basic_details, skills, experience, education, projects)
+    """
+    #create_resume(basic_details, skills, experience, education, projects)
+    basic_details = {
+        "name": "John Doe",
+        "position": "Python Developer",
+        "phone_number": "123-456-7890",
+        "email": "john.doe@example.com",
+        "address": "123 Main St, Anytown, USA",
+        "motivation": "I am passionate about... etc."
+    }
+    create_resume(basic_details)
 
     return 0
 
