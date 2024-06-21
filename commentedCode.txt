@@ -1,0 +1,73 @@
+    """
+    The commented part of the code is the manual way to get the details of the user to create the resume.
+    """
+    """
+    # Get the basic details of the user to create the resume.
+    print("Enter your contact information (required)*: ")
+    name = input("Name: ")
+    phone_number = input("Number: ")
+    email = input("Email: ")
+    address = input("Present Address: ")
+    social_link = input("Github/LinkedIn: ")
+    summery = input("Summery: ")
+    basic_details = {"name": name, "phone_number": phone_number, "email": email, "address": address, "social_link": social_link, "summery": summery}
+    os.system('clear')
+    
+    # Get the skills, experience, education and project details of the user to create the resume.
+    skills = []
+    print("Enter Skills More than 20 (enter 0 to finish) (required)**: ")
+    while True:
+        skill = input("Skill: ")
+        if skill == "0":
+            break
+        skills.append(skill)
+    os.system('clear')
+
+    experience = []
+    print("Enter Experience Details Minimum 2 (enter 0 to company name to finish) (required)**: ")
+    while True:
+        company = input("Company Name: ")
+        if company == "0":
+            break
+        position = input("Position: ")
+        date = input("Date: ")
+        details = []
+        print("Enter Details More than 4 (enter 0 to finish): ")
+        while True:
+            detail = input("Detail: ")
+            if detail == "0":
+                break
+            details.append(detail)
+        experience.append({"company": company, "position": position, "date": date, "details": details})
+    os.system('clear')
+
+    education = []
+    print("Enter Education Details (enter 0 to degree to finish) (required)***: ")
+    while True:
+        degree = input("Degree: ")
+        if degree == "0":
+            break
+        university = input("College/University: ")
+        year = input("Year: ")
+        cgpa = input("CGPA: ")
+        education.append({"degree": degree, "university": university, "year": year, "cgpa": cgpa})
+    os.system('clear')
+
+    project = []
+    print("Enter Project Details (enter 0 to project name to finish)(required)**: ")
+    while True:
+        name = input("Project Name: ")
+        if name == "0":
+            break
+        type = input("Type: ")
+        link = input("Link: ")
+        about = []
+        print("Enter About More than 4 (enter 0 to finish): ")
+        while True:
+            about_detail = input("About: ")
+            if about_detail == "0":
+                break
+            about.append(about_detail)
+        project.append({"name": name, "type": type, "about": about, "link": link})
+    os.system('clear')
+    """
