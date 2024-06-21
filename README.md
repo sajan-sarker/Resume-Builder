@@ -1,9 +1,1 @@
-# Resume-Builder
-
-##CS50P Project
-
-#pip-installable libraries
-
-- fpdf
-- pdfkit
-- jinja2
+# Resume-Builder-Python-Console-Project
