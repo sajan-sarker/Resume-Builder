@@ -22,7 +22,4 @@ Provided Dummy data to build the output file
 - run the command `pip install fpdf2` in the terminal
 
 ## Note: 
-The statements that will used to take user input are commented out in the code to avoid the input process during the 
-grading process because it will take too much time to enter the details manually. To test the program, you can uncomment 
-the statements that take user input and run the program and you need to comment out the statements that assign the values 
-to the variables manually.
+The statements that will used to take user input are commented out in the code to avoid the input process because it will take too much time to enter the details manually. To test the program, you can uncomment the statements that take user input and run the program and you need to comment out the statements that assign the values to the variables manually.
